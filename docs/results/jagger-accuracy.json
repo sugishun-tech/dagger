@@ -1,0 +1,53 @@
+{
+  "sentences": 2195,
+  "gold_tokens": 35869,
+  "predicted_tokens": 35956,
+  "offset_unit": "Unicode code point",
+  "averaging": "micro, exact token span",
+  "metrics": {
+    "segmentation": {
+      "correct": 35056,
+      "predicted": 35956,
+      "gold": 35869,
+      "precision": 0.9749694070530649,
+      "recall": 0.9773341882963005,
+      "f1": 0.9761503654716325
+    },
+    "pos1": {
+      "correct": 34554,
+      "predicted": 35956,
+      "gold": 35869,
+      "precision": 0.9610078985426632,
+      "recall": 0.9633388162480137,
+      "f1": 0.9621719457013574
+    },
+    "full_pos": {
+      "correct": 34037,
+      "predicted": 35956,
+      "gold": 35869,
+      "precision": 0.9466292134831461,
+      "recall": 0.9489252557919094,
+      "f1": 0.9477758440654368
+    },
+    "lemma": {
+      "correct": 34657,
+      "predicted": 35956,
+      "gold": 35869,
+      "precision": 0.9638725108465903,
+      "recall": 0.9662103766483593,
+      "f1": 0.9650400278454577
+    }
+  },
+  "exact_sentences": {
+    "segmentation": 1769,
+    "pos1": 1440,
+    "full_pos": 1195,
+    "lemma": 1497
+  },
+  "source": {
+    "gold": "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/model/kwdlc/test.JAG",
+    "gold_sha256": "d2003b07a351f96519e7a5a990be7537b51a34cb3d9be1b62e3de478447d6d29",
+    "prediction": "/workspace/scratch/2a1d070f5ba5/research_data/jagger-initial-output.mecab",
+    "prediction_sha256": "7466354062ff60a19e95822654bb6286c86e08a261f4686f75c2682f4a510140"
+  }
+}

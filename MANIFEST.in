@@ -1,0 +1,9 @@
+include LICENSE README.md
+recursive-include src *.pyx
+recursive-include examples *.mecab *.txt *.csv
+recursive-include docs *.md *.json
+recursive-include scripts *.py
+recursive-include benchmarks *.py
+recursive-include tests *.py
+exclude src/dagger/*.cpp
+

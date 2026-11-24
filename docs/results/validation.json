@@ -1,0 +1,29 @@
+{
+  "platform": "Linux x86_64, CPython 3.12.14, Cython 3.3.1, GCC 14.2.0",
+  "tests_passed": 57,
+  "validation": "Fresh extraction of the repository ZIP, independent pip build and target installation, then all tests and CLI training/inference smoke checks.",
+  "install_command": "CC=gcc CXX=g++ python -m pip install --no-build-isolation --no-deps --target INSTALLED EXTRACTED_REPO",
+  "test_command": "PYTHONPATH=INSTALLED python -m pytest -q tests",
+  "smoke_checks": [
+    "six handmade training sentences",
+    "token sequence",
+    "lemma reconstruction",
+    "UTF-8 morphological output",
+    "batch token count"
+  ],
+  "github_actions_executed": false,
+  "source_sha256": {
+    "setup.py": "91f9cf495ecb8d472ed6d6e07434d3197b368c42fed4f7a402153ce21f35481b",
+    "pyproject.toml": "c1a95905ee2b815066dc637999ea828a212537406d949e83437d263a22cfb3af",
+    "MANIFEST.in": "7e84f12fc2005c798cf2df075ce465e60fd83b7b4984ea5e170e99208172e90a",
+    "src/dagger/__init__.py": "e644053957c7b7236e5bd9b3b632918b033a8367a7e011712930017bee15d349",
+    "src/dagger/__main__.py": "6a170fc866c867a1e5812daad308396f0940a23f2ecf55e56be39d5d67d23f10",
+    "src/dagger/_core.pyx": "133e0ce2d86a3faa197c732ccf7ef6a0e4cf5fb97e68ef9ff91ec710b0f4cdaa",
+    "src/dagger/_training.pyx": "c33ded937f27f6747b95279ee418bc44ec713731b3cb1997c0b79f02e9e66c0f",
+    "src/dagger/cli.py": "646aa18a253456df4f66be9e4201061949f0d9567781fc40bba359f34051051d",
+    "src/dagger/corpus.py": "d1c13156c1c1a7aba447a8a73fc7c552a9f827c24c465f164f5c9bd3391758cb",
+    "src/dagger/model.py": "1616cae7a999248c89bba4039cfdeaf0a507c61a0a3d0d05c406209b8333bdb6",
+    "src/dagger/tagger.py": "79d35da74259fb9acc04d7d06c1c0149d83283005a859daf8e316e73a2c398e5",
+    "src/dagger/training.py": "2e56bb53457b0ee6ba935d48470710d8c5a40b09693e5ea6ffe665b13348bc92"
+  }
+}

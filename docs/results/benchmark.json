@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-24T01:26:26Z",
+  "environment": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "logical_cpus": 9,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "python_compiler": "Clang 22.1.3 ",
+    "python_config_cc": "clang -pthread",
+    "python_config_cflags": "-fno-strict-overflow -Wsign-compare -Wunreachable-code -DNDEBUG -g -O3 -Wall   -O3 -fstack-protector -fstack-clash-protection -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2  -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -fPIC  ",
+    "perf_counter_resolution_seconds": 1e-09,
+    "cpu_affinity": [
+      0
+    ],
+    "Cython_version": "3.3.1",
+    "dagger_version": null
+  },
+  "build_notes": [
+    "dagger: GCC 14.2.0; -O3 -std=c++17 -DNDEBUG; DAGGER_NATIVE disabled; inherited sysconfig CFLAGS",
+    "jagger: GCC 14.2.0; -O3 -DNDEBUG; no -march"
+  ],
+  "dagger_model": {
+    "path": "models/kwdlc.dgr",
+    "bytes": 47016560,
+    "sha256": "4482e46ae10a55916cecb2ca227236c02d9c6eac3abcf7e828a388577ddbc424"
+  },
+  "input": {
+    "path": "data/test.txt",
+    "original_sha256": "3cb38a4332546779b139e372ddd8cd61657a686539648206a652b88b1871a302",
+    "normalized_sha256": "3cb38a4332546779b139e372ddd8cd61657a686539648206a652b88b1871a302",
+    "bytes": 197279,
+    "sentences": 2195
+  },
+  "method": {
+    "runs": 5,
+    "cli_repeat": 1000,
+    "api_repeat": 10,
+    "cli": "wall time, startup/model load/read/format/write/exit included; stdout to DEVNULL",
+    "stdin": "regular file for both validation captures and timed CLI runs",
+    "api": "model loaded once; warm run; UTF-8 input and output materialization included",
+    "count_only": "no output strings; not comparable to full/wakati CLI",
+    "run_order": "deterministic shuffled interleaving, seed 0",
+    "warmup": "one untimed complete run per mode and implementation",
+    "rss": "not measured",
+    "test_repetition_is_not_training": true
+  },
+  "modes": {
+    "full": {
+      "commands": {
+        "dagger": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-m",
+          "dagger",
+          "--model",
+          "models/kwdlc.dgr"
+        ],
+        "jagger": [
+          "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/src/jagger",
+          "-m",
+          "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/model/kwdlc"
+        ]
+      },
+      "output_for_one_corpus": {
+        "dagger": {
+          "sha256": "9266ff2ccfcfc0b8a7d9bb10435e863085c5bebe23cee5a6aabf5b9da21c218b",
+          "bytes": 1857575,
+          "sentences": 2195,
+          "tokens": 35974
+        },
+        "jagger": {
+          "sha256": "7466354062ff60a19e95822654bb6286c86e08a261f4686f75c2682f4a510140",
+          "bytes": 1970370,
+          "sentences": 2195,
+          "tokens": 35956
+        }
+      },
+      "comparison": {
+        "bytes_identical": false,
+        "sentence_counts_identical": true,
+        "token_sequences_identical": false,
+        "differing_sentences": 357,
+        "agreement_with_jagger_not_gold_accuracy": {
+          "sentences": 2195,
+          "gold_tokens": 35956,
+          "predicted_tokens": 35974,
+          "offset_unit": "Unicode code point",
+          "averaging": "micro, exact token span",
+          "metrics": {
+            "segmentation": {
+              "correct": 35931,
+              "predicted": 35974,
+              "gold": 35956,
+              "precision": 0.9988046922777561,
+              "recall": 0.999304705751474,
+              "f1": 0.9990546364521062
+            },
+            "pos1": {
+              "correct": 35763,
+              "predicted": 35974,
+              "gold": 35956,
+              "precision": 0.9941346528048035,
+              "recall": 0.9946323284013795,
+              "f1": 0.9943834283331017
+            },
+            "full_pos": {
+              "correct": 35627,
+              "predicted": 35974,
+              "gold": 35956,
+              "precision": 0.9903541446600322,
+              "recall": 0.9908499276893982,
+              "f1": 0.9906019741415265
+            },
+            "lemma": {
+              "correct": 35882,
+              "predicted": 35974,
+              "gold": 35956,
+              "precision": 0.9974425974314783,
+              "recall": 0.9979419290243631,
+              "f1": 0.9976922007507298
+            }
+          },
+          "exact_sentences": {
+            "segmentation": 2177,
+            "pos1": 2019,
+            "full_pos": 1907,
+            "lemma": 2130
+          }
+        }
+      },
+      "cli_run_order": [
+        [
+          "dagger",
+          "jagger"
+        ],
+        [
+          "dagger",
+          "jagger"
+        ],
+        [
+          "jagger",
+          "dagger"
+        ],
+        [
+          "dagger",
+          "jagger"
+        ],
+        [
+          "dagger",
+          "jagger"
+        ]
+      ],
+      "cli": {
+        "dagger": {
+          "raw_seconds": [
+            7.051614074999861,
+            7.14098627400017,
+            7.251878130000023,
+            6.869396340000094,
+            7.148155109000072
+          ],
+          "median_seconds": 7.14098627400017,
+          "min_seconds": 6.869396340000094,
+          "max_seconds": 7.251878130000023,
+          "input_bytes": 197279000,
+          "sentences": 2195000,
+          "tokens": 35974000,
+          "sentences_per_second": 307380.50960717304,
+          "tokens_per_second": 5037679.477270361,
+          "input_mib_per_second": 26.34648888085849
+        },
+        "jagger": {
+          "raw_seconds": [
+            1.9372283180000522,
+            1.9412880849999965,
+            1.999937558000056,
+            1.942662978000044,
+            2.027362094999944
+          ],
+          "median_seconds": 1.942662978000044,
+          "min_seconds": 1.9372283180000522,
+          "max_seconds": 2.027362094999944,
+          "input_bytes": 197279000,
+          "sentences": 2195000,
+          "tokens": 35956000,
+          "sentences_per_second": 1129892.330711802,
+          "tokens_per_second": 18508614.41597884,
+          "input_mib_per_second": 96.84639981145733
+        }
+      },
+      "dagger_cli_speed_relative_to_jagger": 0.2720440711492674,
+      "dagger_api_materialized_output": {
+        "raw_seconds": [
+          0.055485021000095,
+          0.053973113999973066,
+          0.05256826100003309,
+          0.05224839500010603,
+          0.05421028499995373
+        ],
+        "median_seconds": 0.053973113999973066,
+        "min_seconds": 0.05224839500010603,
+        "max_seconds": 0.055485021000095,
+        "input_bytes": 1972790,
+        "sentences": 21950,
+        "tokens": 359740,
+        "sentences_per_second": 406683.96490910184,
+        "tokens_per_second": 6665170.366123021,
+        "input_mib_per_second": 34.858080537358376
+      }
+    },
+    "wakati": {
+      "commands": {
+        "dagger": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-m",
+          "dagger",
+          "--model",
+          "models/kwdlc.dgr",
+          "--wakati"
+        ],
+        "jagger": [
+          "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/src/jagger",
+          "-m",
+          "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/model/kwdlc",
+          "-w"
+        ]
+      },
+      "output_for_one_corpus": {
+        "dagger": {
+          "sha256": "60afd94ba8d4dcc388cdc2b91c73bf42da00c79c0789b7bc25ef95af622a316c",
+          "bytes": 233253,
+          "sentences": 2195,
+          "tokens": 35974
+        },
+        "jagger": {
+          "sha256": "a1e8498d1629db7142184253117e16b86d2484490c75f481cc52e9d3a515c151",
+          "bytes": 231040,
+          "sentences": 2195,
+          "tokens": 35956
+        }
+      },
+      "comparison": {
+        "bytes_identical": false,
+        "sentence_counts_identical": true,
+        "token_sequences_identical": false,
+        "differing_sentences": 18
+      },
+      "cli_run_order": [
+        [
+          "dagger",
+          "jagger"
+        ],
+        [
+          "dagger",
+          "jagger"
+        ],
+        [
+          "jagger",
+          "dagger"
+        ],
+        [
+          "dagger",
+          "jagger"
+        ],
+        [
+          "dagger",
+          "jagger"
+        ]
+      ],
+      "cli": {
+        "dagger": {
+          "raw_seconds": [
+            4.658630508999977,
+            4.580359051999949,
+            4.955158999000105,
+            4.700482469000008,
+            4.710053334999884
+          ],
+          "median_seconds": 4.700482469000008,
+          "min_seconds": 4.580359051999949,
+          "max_seconds": 4.955158999000105,
+          "input_bytes": 197279000,
+          "sentences": 2195000,
+          "tokens": 35974000,
+          "sentences_per_second": 466973.3403913683,
+          "tokens_per_second": 7653256.923571337,
+          "input_mib_per_second": 40.02566049487553
+        },
+        "jagger": {
+          "raw_seconds": [
+            1.5613248569998177,
+            1.527201284999819,
+            1.5570003169998472,
+            1.5365232950000518,
+            1.5960266930001126
+          ],
+          "median_seconds": 1.5570003169998472,
+          "min_seconds": 1.527201284999819,
+          "max_seconds": 1.5960266930001126,
+          "input_bytes": 197279000,
+          "sentences": 2195000,
+          "tokens": 35956000,
+          "sentences_per_second": 1409762.0764968768,
+          "tokens_per_second": 23093123.108210344,
+          "input_mib_per_second": 120.8348600909932
+        }
+      },
+      "dagger_cli_speed_relative_to_jagger": 0.3312426601457121,
+      "dagger_api_materialized_output": {
+        "raw_seconds": [
+          0.032113691999938965,
+          0.032039633000067624,
+          0.03189412199981234,
+          0.03205578600000081,
+          0.031395199999906254
+        ],
+        "median_seconds": 0.032039633000067624,
+        "min_seconds": 0.031395199999906254,
+        "max_seconds": 0.032113691999938965,
+        "input_bytes": 1972790,
+        "sentences": 21950,
+        "tokens": 359740,
+        "sentences_per_second": 685088.9958681384,
+        "tokens_per_second": 11227968.809731394,
+        "input_mib_per_second": 58.720995794774396
+      }
+    }
+  },
+  "jagger": {
+    "version": "2026-06-27",
+    "executable": {
+      "path": "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/src/jagger",
+      "bytes": 26272,
+      "sha256": "10764ee323d0b96f1a3837dbd7986f3255e3f6e6d4f43b924d682c418f2c301f"
+    },
+    "model": {
+      "path": "/workspace/scratch/2a1d070f5ba5/research_data/upstream/jagger-2026-06-27/model/kwdlc",
+      "bytes": 352558484,
+      "files": [
+        {
+          "name": "dev",
+          "bytes": 131599,
+          "sha256": "7622179cfb575705f84dcdff87db3fcd42ae1c40bb470cd1b1d5e9ee2c30ba91"
+        },
+        {
+          "name": "dev.JAG",
+          "bytes": 1162820,
+          "sha256": "a7a9603580321577e4aeca838600e98bfaf2608920121f876c2e4cb3167f71a4"
+        },
+        {
+          "name": "dict",
+          "bytes": 121746458,
+          "sha256": "f9a46a68bdf0e7f20f60e576885d6b610832983ac0548d7514719db5c85290cd"
+        },
+        {
+          "name": "patterns",
+          "bytes": 107947606,
+          "sha256": "80d4f3a451f5099de8becb9ec214f7c65a00f1278434f6de8df6c749124d7c84"
+        },
+        {
+          "name": "patterns.cp2i",
+          "bytes": 2228226,
+          "sha256": "ceaad0f26694d4d99ac492ced157d58c1be76b3c3613df3bd506c94e67f84156"
+        },
+        {
+          "name": "patterns.da",
+          "bytes": 14942208,
+          "sha256": "ed73a96d73012ad31d9eaaa4f0870d79eed88a0fac215bfacc4184fdfe8b21e3"
+        },
+        {
+          "name": "patterns.fs",
+          "bytes": 91220519,
+          "sha256": "a0ecdf70d6d752910dc9e7bab1a3c248ce11aa78ba64684aeeb47b5493cae36f"
+        },
+        {
+          "name": "test",
+          "bytes": 197279,
+          "sha256": "3cb38a4332546779b139e372ddd8cd61657a686539648206a652b88b1871a302"
+        },
+        {
+          "name": "test.JAG",
+          "bytes": 1856200,
+          "sha256": "d2003b07a351f96519e7a5a990be7537b51a34cb3d9be1b62e3de478447d6d29"
+        },
+        {
+          "name": "train",
+          "bytes": 1072602,
+          "sha256": "8315f434645ba7d60a0130720f7b259a07bc9b7ce357b015e4bca90192f7158f"
+        },
+        {
+          "name": "train.JAG",
+          "bytes": 10052967,
+          "sha256": "98905dc44586ef8a8e1869c991be617efdeaa0bb236d4d3cc54a8c2ff498edc2"
+        }
+      ]
+    }
+  },
+  "training_corpus": {
+    "path": "data/train.mecab",
+    "bytes": 10052967,
+    "sha256": "98905dc44586ef8a8e1869c991be617efdeaa0bb236d4d3cc54a8c2ff498edc2"
+  },
+  "dictionary": {
+    "path": "data/dictionary.csv",
+    "bytes": 121746458,
+    "sha256": "f9a46a68bdf0e7f20f60e576885d6b610832983ac0548d7514719db5c85290cd"
+  },
+  "dagger_api_count_only": {
+    "raw_seconds": [
+      0.02538836700000502,
+      0.026226872000052026,
+      0.02611113300008583,
+      0.029812859999992725,
+      0.027121872999941843
+    ],
+    "median_seconds": 0.026226872000052026,
+    "min_seconds": 0.02538836700000502,
+    "max_seconds": 0.029812859999992725,
+    "input_bytes": 1972790,
+    "sentences": 21950,
+    "tokens": 359740,
+    "sentences_per_second": 836927.8654334553,
+    "tokens_per_second": 13716466.0733955,
+    "input_mib_per_second": 71.73555255309721
+  }
+}

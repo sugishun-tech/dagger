@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+*.egg-info/
+src/dagger/*.cpp
+.pytest_cache/
+.venv/
+build/
+dist/
+data/
+models/
+*.dgr
+benchmark-local/
+

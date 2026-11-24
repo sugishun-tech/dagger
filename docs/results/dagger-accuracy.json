@@ -1,0 +1,53 @@
+{
+  "sentences": 2195,
+  "gold_tokens": 35869,
+  "predicted_tokens": 35974,
+  "offset_unit": "Unicode code point",
+  "averaging": "micro, exact token span",
+  "metrics": {
+    "segmentation": {
+      "correct": 35077,
+      "predicted": 35974,
+      "gold": 35869,
+      "precision": 0.9750653249569133,
+      "recall": 0.9779196520672447,
+      "f1": 0.9764904026836296
+    },
+    "pos1": {
+      "correct": 34520,
+      "predicted": 35974,
+      "gold": 35869,
+      "precision": 0.9595819202757547,
+      "recall": 0.9623909225236277,
+      "f1": 0.9609843686928441
+    },
+    "full_pos": {
+      "correct": 34004,
+      "predicted": 35974,
+      "gold": 35869,
+      "precision": 0.9452382276088286,
+      "recall": 0.9480052412947113,
+      "f1": 0.9466197124284899
+    },
+    "lemma": {
+      "correct": 34679,
+      "predicted": 35974,
+      "gold": 35869,
+      "precision": 0.9640017790626564,
+      "recall": 0.9668237196464914,
+      "f1": 0.9654106871929068
+    }
+  },
+  "exact_sentences": {
+    "segmentation": 1773,
+    "pos1": 1412,
+    "full_pos": 1169,
+    "lemma": 1502
+  },
+  "source": {
+    "gold": "data/test.mecab",
+    "gold_sha256": "d2003b07a351f96519e7a5a990be7537b51a34cb3d9be1b62e3de478447d6d29",
+    "prediction": "models/kwdlc.dgr",
+    "prediction_sha256": "4482e46ae10a55916cecb2ca227236c02d9c6eac3abcf7e828a388577ddbc424"
+  }
+}
